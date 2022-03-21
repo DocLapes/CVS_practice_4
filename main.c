@@ -1,6 +1,11 @@
 #include <stdio.h>
 
+<<<<<<< HEAD
 void main(void)
+=======
+int main(int argc , char * argv[])
+>>>>>>> dev
 {
-	printf("Hello , world/n");
+	printf("Hello , beautiful world/n");
+	return 0;
 }
