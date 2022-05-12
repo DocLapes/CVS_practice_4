@@ -1,0 +1,235 @@
+Admin@DESKTOP-G5P15AJ MINGW64 ~
+$ cd Desktop/
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop
+$ cd branching
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching
+$ git init
+Initialized empty Git repository in C:/Users/Admin/Desktop/branching/.git/
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ touch main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ nano main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git commit -m "First commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        main.c
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git add main.c
+warning: LF will be replaced by CRLF in main.c.
+The file will have its original line endings in your working directory
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git commit -m "First commit"
+[master (root-commit) 0987612] First commit
+ 1 file changed, 6 insertions(+)
+ create mode 100644 main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git branch dev
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ nano main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git add main.c
+warning: LF will be replaced by CRLF in main.c.
+The file will have its original line endings in your working directory
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git commit -m "Second commit"
+[master 5a5456a] Second commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git co dev
+git: 'co' is not a git command. See 'git --help'.
+
+The most similar commands are
+        commit
+        clone
+        log
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git checkout dev
+Switched to branch 'dev'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ nano main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git commit -m "Third commit"
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   main.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git add main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git commit -m "Third commit"
+[dev 52d62e8] Third commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git merge dev
+Auto-merging main.c
+CONFLICT (content): Merge conflict in main.c
+Automatic merge failed; fix conflicts and then commit the result.
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   main.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master|MERGING)
+$ nano main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master|MERGING)
+$ git add main.c
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master|MERGING)
+$ git commit -m "Fourth commit"
+[master 923de8a] Fourth commit
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git merge dev
+Already up to date.
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ Fast-forward
+bash: Fast-forward: command not found
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git Fast-Forward
+git: 'Fast-Forward' is not a git command. See 'git --help'.
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ switch dev
+bash: switch: command not found
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git switch dev
+Switched to branch 'dev'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git merge master
+Updating 52d62e8..923de8a
+Fast-forward
+ main.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git commit -m "Fast forward"
+On branch dev
+nothing to commit, working tree clean
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (dev)
+$ git branch -m feature
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git switch main
+fatal: invalid reference: main
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git switch master
+Switched to branch 'master'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ nano lol.txt
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git add lol.txt
+warning: LF will be replaced by CRLF in lol.txt.
+The file will have its original line endings in your working directory
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git commit -m "Fifth commit"
+[master f533ee1] Fifth commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lol.txt
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git switch feature
+Switched to branch 'feature'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ nano kek.txt
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git add kek.txt
+warning: LF will be replaced by CRLF in kek.txt.
+The file will have its original line endings in your working directory
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git commit -m "Six commit"
+[feature e3f5113] Six commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 kek.txt
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git switch master
+Switched to branch 'master'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git rebase feature
+Successfully rebased and updated refs/heads/master.
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git commit -m "Rebase"
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git switch feature
+Switched to branch 'feature'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git merge master
+Updating e3f5113..37f969d
+Fast-forward
+ lol.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lol.txt
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git commit -m "Fast forward"
+On branch feature
+nothing to commit, working tree clean
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (feature)
+$ git switch master
+Switched to branch 'master'
+
+Admin@DESKTOP-G5P15AJ MINGW64 ~/Desktop/branching (master)
+$ git branch -d feature
+Deleted branch feature (was 37f969d).
+
